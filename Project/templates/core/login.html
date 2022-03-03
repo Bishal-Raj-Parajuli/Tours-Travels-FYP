@@ -1,0 +1,29 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block title %}
+  
+{% endblock %}
+
+{% block content %}
+<div class="px-4 py-5 text-center" style="height: 100% !important; background-image: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)),url({% static 'img/bg-hero.jpg' %});">
+    <h1 class="display-5 fw-bold text-white">Login</h1>
+</div>
+<br>
+<div class="form-signin">
+    <form method="POST">
+        {% csrf_token %}
+        <h2 class="txt-primary text-center">Thapaliya Travels</h1>
+      <h1 class="h4 mb-3 text-center">Please sign in</h1>
+  
+      <div class="form-floating">
+        <input type="email" class="form-control"  name='email' id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    </form>
+  </div>
+{% endblock %}

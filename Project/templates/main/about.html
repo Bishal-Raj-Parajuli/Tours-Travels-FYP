@@ -1,0 +1,121 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block title %}
+  
+{% endblock %}
+
+{% block content %}
+<div class="px-4 py-5 text-center" style="height: 100% !important; background-image: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)),url({% static 'img/bg-hero.jpg' %});">
+    <h1 class="display-5 fw-bold text-white">About Us</h1>
+</div>
+<br>
+<div class="container">
+    <div class="row g-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="position-relative h-100">
+        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/about.jpg' %}" alt="" style="object-fit: cover;">
+        </div>
+        </div>
+        <div class="col-lg-6">
+        <h6 class="section-title bg-white txt-primary pe-3"><strong>About Us</strong></h6>
+        <h1 class="mb-4">Welcome to <span class="txt-primary">Thapaliya Travels</span></h1>
+        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+        <div class="row gy-2 gx-4 mb-4">
+        <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right txt-primary  me-2"></i>First Class Flights</p>
+        </div>
+        <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right txt-primary  me-2"></i>Handpicked Hotels</p>
+        </div>
+        <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right txt-primary me-2"></i>5 Star Accommodations</p>
+        </div>
+        <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right txt-primary me-2"></i>Latest Model Vehicles</p>
+        </div>
+        <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right txt-primary me-2"></i>150 Premium City Tours</p>
+        </div>
+        <div class="col-sm-6">
+        <p class="mb-0"><i class="fa fa-arrow-right txt-primary me-2"></i>24/7 Service</p>
+        </div>
+        </div>
+</div>
+<div class="container-xxl py-5">
+    <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+    <h6 class="section-title bg-white text-center txt-primary px-3">Travel Guide</h6>
+    <h1 class="mb-5">Meet Our Guide</h1>
+    </div>
+    <div class="row g-4">
+    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+    <div class="team-item">
+    <div class="overflow-hidden">
+    <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="">
+    </div>
+    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="text-center p-4">
+    <h5 class="mb-0">Full Name</h5>
+    <small>Designation</small>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+    <div class="team-item">
+    <div class="overflow-hidden">
+    <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="">
+    </div>
+    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="text-center p-4">
+    <h5 class="mb-0">Full Name</h5>
+    <small>Designation</small>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+    <div class="team-item">
+    <div class="overflow-hidden">
+    <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="">
+    </div>
+    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="text-center p-4">
+     <h5 class="mb-0">Full Name</h5>
+    <small>Designation</small>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
+    <div class="team-item">
+    <div class="overflow-hidden">
+    <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="">
+    </div>
+    <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+    <a class="btn btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="text-center p-4">
+    <h5 class="mb-0">Full Name</h5>
+    <small>Designation</small>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}
