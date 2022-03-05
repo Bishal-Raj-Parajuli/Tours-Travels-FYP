@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login as auth_login, logout
+from django.contrib.auth import authenticate, login 
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render
@@ -51,6 +51,7 @@ def LoginView(request):
         password = request.POST.get('password')
         user = authenticate(email=email, password=password)
         if user is not None:
+            login(request=request, user=user)
             return render(request, 'main/home.html')
         else:
             return HttpResponse('Sorry Something Went Wrong !!!')
