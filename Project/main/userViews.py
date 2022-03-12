@@ -1,16 +1,15 @@
-from django.http import HttpResponse
+from turtle import home
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login 
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render
-
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView
+from django.contrib.auth import logout
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse
+from django.contrib import messages
 
 from .models import CustomUser
 from .userForms import RegistrationForm
@@ -30,9 +29,7 @@ class RegistrationView(CreateView):
         success_url = reverse('login')
         if next_url:
             success_url += '?next={}'.format(next_url)
-
         return success_url
-
 
 class ProfileView(UpdateView):
     model = CustomUser
@@ -57,3 +54,10 @@ def LoginView(request):
             return HttpResponse('Sorry Something Went Wrong !!!')
     else:
         return render(request, 'core/login.html')
+
+def LogoutView(request):
+    user = request.user
+    print(user)
+    logout(request)
+    return render(request, 'main/home.html', {'message':'Successfully Logged Out !!!'})
+    

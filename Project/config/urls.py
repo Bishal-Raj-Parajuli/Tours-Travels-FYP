@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
-from main.userViews import RegistrationView, ProfileView, LoginView
+from main.userViews import RegistrationView, ProfileView, LoginView, LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +28,6 @@ urlpatterns = [
     path('register/', RegistrationView.as_view(), name='register'),
     path('profile/', ProfileView.as_view(), name='profile'),
     path('accounts/login/', LoginView, name='login'),
-    path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('accounts/logout/', LogoutView, name='logout'),
 
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,4 +1,6 @@
+from importlib.resources import Package
 from django.shortcuts import render
+from .models import Packages
 
 # Create your views here.
 def HomeView(request):
@@ -11,7 +13,11 @@ def ServicesView(request):
     return render(request, 'main/services.html')
 
 def PackagesView(request):
-    return render(request, 'main/packages.html')
+    objects = Packages.objects.filter(is_active=True)
+    context = {
+        'objects':objects
+    }
+    return render(request, 'main/packages.html', context)
 
 def ContactView(request):
     return render(request, 'main/contact.html')
