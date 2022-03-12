@@ -1,6 +1,6 @@
 from importlib.resources import Package
 from django.shortcuts import render
-from .models import Packages
+from .models import Destinations, Packages
 
 # Create your views here.
 def HomeView(request):
@@ -18,6 +18,14 @@ def PackagesView(request):
         'objects':objects
     }
     return render(request, 'main/packages.html', context)
+
+def BookingView(request, pk, id):
+    if request.method == 'GET':
+        object = Packages.objects.get(pk=pk)
+        context = {
+            'object':object
+        }
+        return render(request, 'main/book-package.html', context)
 
 def ContactView(request):
     return render(request, 'main/contact.html')

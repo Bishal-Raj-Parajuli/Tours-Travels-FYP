@@ -31,7 +31,7 @@
                 <h3 class="mb-0">Rs. {{ object.price }}</h3>
                 <p>{{ object.description }}</p>
                 <div class="d-flex justify-content-center mb-2">
-                <a href="#" class="btn btn-sm btn-primary px-3" >Book Now</a>
+                <a href="{% url 'booking' object.id object.destination.id  %}" class="btn btn-sm btn-primary px-3" >Book Now</a>
                 </div>
                 </div>
                 </div>

@@ -1,5 +1,4 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.db import models
 
@@ -82,9 +81,10 @@ class Destinations(TimeStamp):
 
     def __str__(self) -> str:
         return self.name
+    
 
 class Packages(TimeStamp):
-    destination = models.ForeignKey(Destinations, on_delete=models.CASCADE)
+    destination = models.ForeignKey(Destinations, on_delete=models.CASCADE, related_name='packages')
     price = models.FloatField()
     days = models.IntegerField()
     persons = models.IntegerField()
