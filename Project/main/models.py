@@ -106,4 +106,5 @@ class Guides(TimeStamp):
 
 class Bookings(TimeStamp):
     package = models.ForeignKey(Packages, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     guide = models.ForeignKey(Guides, on_delete=models.CASCADE, null=True, blank=True)

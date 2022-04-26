@@ -1,0 +1,68 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block title %}
+  
+{% endblock %}
+
+{% block content %}
+<div class="px-4 py-5 text-center" style="height: 100% !important; background-image: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)),url({% static 'img/bg-hero.jpg' %});">
+    <h1 class="display-5 fw-bold text-white">Book Packages</h1>
+</div>
+<br>
+<div class="container">
+    <div class="row g-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="position-relative h-100">
+        <img class="img-fluid position-absolute w-100 h-100" src="{{ object.destination.image.url }}" alt="" style="object-fit: cover;">
+        </div>
+        </div>
+        <div class="col-lg-6">
+        <h6 class="section-title bg-white txt-primary pe-3"><strong>Destination</strong></h6>
+        <h1 class="mb-4">Book <span class="txt-primary">{{ object.destination.name}} Package</span></h1>
+        <p class="mb-4">{{ object.description }}</p>
+        <div class="row gy-2 gx-4 mb-4">
+            <small class="flex-fill border-end py-2"><i class="fa fa-map-marker-alt txt-primary me-2"></i>{{ object.destination.address }}</small>
+            <small class="flex-fill border-end py-2"><i class="fa fa-calendar-alt txt-primary me-2"></i>{{object.days}} days</small>
+            <small class="flex-fill py-2"><i class="fa fa-user txt-primary me-2"></i>{{object.persons}} Person</small>
+        </div>
+        <h5 class="mb-0">Rs. {{ object.price }}</h5>
+        <h5> Rs. 2000 (Guide)</h5>
+        <h3>Total: Rs. {{ object.price|add:"2000" }}</h3>
+        <div>
+            Want to Cancle Guide ? <a href="{% url 'packages'  %}" class="btn btn-primary">Go Back</a>
+        </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <h1 class="mb-5">Hire Our Guide</h1>
+        </div>
+        <div class="row g-4">
+            {% for guide in guides %}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                        <img class="img-fluid" src="{{ guide.image.url }}" alt="" style="object-fit: cover; width: 300px; height: 300px;">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                        <a class="btn btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                        <h5 class="mb-0">{{ guide.name }}</h5>
+                        <small>{{ guide.contact }}</small>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'booked-guide' object.id guide.id  %}" class="btn btn-primary">Book</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+</div>
+
+
+{% endblock %}

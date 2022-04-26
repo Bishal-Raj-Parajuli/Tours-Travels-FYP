@@ -26,14 +26,23 @@
             <small class="flex-fill py-2"><i class="fa fa-user txt-primary me-2"></i>{{object.persons}} Person</small>
         </div>
         <h3 class="mb-0">Rs. {{ object.price }}</h3>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <div class="input-group-text">
-                <input type="checkbox" aria-label="Checkbox for following text input">
+                  <form method="POST">
+                      {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="checkbox" name="hire_guide">
+                            <span class="mx-2"> Want to hire a Guide? (Extra Charge for guide) </span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Book Now</button>
+                    </div>
+                    
+                  </form>
+                
+                
               </div>
             </div>
-            <br>
-            <span class="mx-2"> Want to hire a Guide ??</span>
         </div>
     </div>
     </div>
